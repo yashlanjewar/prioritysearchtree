@@ -1,0 +1,130 @@
+Enter number of coordinates
+13
+Enter Coordinates 1 :
+15 7
+Enter Coordinates 2 :
+16 2
+Enter Coordinates 3 :
+12 1
+Enter Coordinates 4 :
+14 -1
+Enter Coordinates 5 :
+10 -2
+Enter Coordinates 6 :
+-1 9
+Enter Coordinates 7 :
+6 4
+Enter Coordinates 8 :
+7 6
+Enter Coordinates 9 :
+-2 5
+Enter Coordinates 10 :
+2 3
+Enter Coordinates 11 :
+4 0
+Enter Coordinates 12 :
+1 8
+Enter Coordinates 13 :
+9 -3
+Y coordinates sorted
+9
+8
+7
+6
+5
+4
+3
+2
+1
+0
+-1
+-2
+-3
+index
+5
+11
+0
+7
+8
+6
+9
+1
+2
+10
+3
+4
+12
+X values sorted
+-1
+1
+15
+7
+-2
+6
+2
+16
+12
+4
+14
+10
+9
+Root => -1,9
+Enter Median
+8
+Left child of -1,9 is:
+1,8
+Left child of 1,8 is:
+-2,5
+Left child of -2,5 is:
+-999,5
+Right child of -2,5 is:
+2,3
+Left child of 2,3 is:
+-999,3
+Right child of 2,3 is:
+-999,3
+Right child of 1,8 is:
+7,6
+Left child of 7,6 is:
+6,4
+Left child of 6,4 is:
+4,0
+Left child of 4,0 is:
+-999,0
+Right child of 4,0 is:
+-999,0
+Right child of 6,4 is:
+-999,4
+Right child of 7,6 is:
+-999,6
+Right child of -1,9 is:
+15,7
+Left child of 15,7 is:
+10,-2
+Left child of 10,-2 is:
+9,-3
+Left child of 9,-3 is:
+-999,-3
+Right child of 9,-3 is:
+-999,-3
+Right child of 10,-2 is:
+-999,-2
+Right child of 15,7 is:
+16,2
+Left child of 16,2 is:
+12,1
+Left child of 12,1 is:
+-999,1
+Right child of 12,1 is:
+-999,1
+Right child of 16,2 is:
+14,-1
+Left child of 14,-1 is:
+-999,-1
+Right child of 14,-1 is:
+-999,-1
+
+
+
+
+

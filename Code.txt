@@ -1,0 +1,250 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package adsprojectpst;
+
+import static java.lang.Math.floor;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+/**
+ *
+ * @author Sherlock
+ */
+
+/**class Node{
+    int datax,datay;
+    Node left,right;
+    boolean flag;
+    
+    Node(int keyx,int keyy ){
+        datax = keyx;
+        datay = keyy;
+        left=right=null;
+        flag=false;
+    }
+}
+
+class Tree {
+    Node node=null;
+    void add(int keyx,int keyy){
+        node=insert(node,keyx,keyy);
+    }
+    Node insert(Node node,int keyx,int keyy){
+        if(node==null)
+            node=new Node(keyx,keyy);
+        else{
+            if(node.left==null){
+                node.left=insert(node.left,keyx,keyy);
+            }else if(node.right==null){
+                node.right=insert(node.right,keyx,keyy);
+            }
+        }
+        return node;
+    }
+    /**
+    int leafNode(Node node){
+        if(node==null)
+            return 0;
+        if(node.left==null && node.right==null)
+            return 1;
+        else 
+            return leafNode(node.left)+leafNode(node.right);
+    }
+     */
+    
+//}
+
+public class ADSProjectPST {
+
+    /**
+     * @param args the command line arguments
+     */
+/**    
+ArrayList<Integer> arrange(ArrayList<Integer> x,ArrayList<Integer> y){
+ArrayList<Integer> sorrt = new ArrayList();
+for(int i=0;i<x.size();i++){
+    for(int j=0;j<x.size();j++){
+        if(x.get(i)==y.get(i)){
+            sorrt.add(j);
+        }
+    }
+}
+return sorrt;
+}
+
+*/
+public void calculate(ArrayList<Integer> arryx,ArrayList<Integer> arryy,ArrayList<Integer> flag){
+int rootx,rooty;
+ArrayList<Integer> medi1 = new ArrayList();
+Scanner sc=new Scanner(System.in);
+int tmax=-999;
+int median;
+int t=0;
+    //System.out.println("Root=> "+arryx.get(0)+","+arryy.get(0));
+    System.out.println("Enter Median");
+    median =sc.nextInt();
+    medi1.add(median);
+    Collections.sort(medi1);
+    System.out.println("Left child of "+arryx.get(t)+","+arryy.get(t)+" is:");
+         for(int j=0;j<(int)median;j++){
+                if(tmax<=arryx.get(j) && flag.get(j)!=1){
+                    tmax=arryx.get(j);
+                    flag.set(j, 1);
+                }
+         System.out.println(arryx.get(j)+","+arryy.get(j));
+         }
+        if(tmax!=-999){
+         calculate(arryx,arryy,flag);
+        }
+    System.out.println("Right child of "+arryx.get(t)+","+arryy.get(t)+" is ");
+         for(int j=(int)median;j<arryx.size();j++){
+                if(tmax<=arryx.get(j) && flag.get(j)!=1){
+                    tmax=arryx.get(j);
+                    flag.set(j, 1);
+                }
+            }
+         if(tmax!=-999){
+            calculate(arryx,arryy,flag);
+         }t++;
+         
+}
+
+    
+    public static void main(String[] args) {
+        // TODO code application logic here
+     //Tree t=new Tree();
+     ArrayList<Integer> arrx = new ArrayList();
+     ArrayList<Integer> arry = new ArrayList();
+     ArrayList<Integer> temp = new ArrayList();
+     ArrayList<Integer> yindex = new ArrayList();
+     ArrayList<Integer> temp3 = new ArrayList();
+     ArrayList<Integer> medi = new ArrayList();
+     ArrayList <Integer> flag = new ArrayList();
+     
+     int median;
+     int tmax=-999;
+     
+     int i,j,med;
+     int elmx,elmy,tmp;
+     
+     
+     Scanner sc=new Scanner(System.in);
+     System.out.println("Enter number of coordinates");
+     int count = sc.nextInt();
+     for(i=0;i<count;i++){
+         System.out.println("Enter Coordinate " +(i+1)+" :");
+         elmx=sc.nextInt();
+         elmy=sc.nextInt();
+         arrx.add(elmx);
+         arry.add(elmy);
+         temp.add(elmy);
+     }
+//     temp=arry;
+     //temp3=arrx;
+     Collections.sort(arry);
+     Collections.reverse(arry);
+        System.out.println("Y coordinates sorted");
+        i=0;
+     while(i<arrx.size()){
+        
+         System.out.println(arry.get(i));
+         i++;
+    }
+for(i=0;i<arry.size();i++){
+    for(j=0;j<arry.size();j++){
+        if(arry.get(i)==temp.get(j)){
+            yindex.add(j);
+        }
+    }
+}
+     
+        System.out.println("index");
+        i=0;
+while(i<arrx.size()){
+        
+         System.out.println(yindex.get(i));
+         i++;
+    }
+
+     for(i=0;i<arrx.size();i++){
+        // temp3.set(i, arrx.get(temp2.get(i)));
+         temp3.add( arrx.get(yindex.get(i)));     
+     }
+     
+     
+     //temp=arrange(temp,arry);
+     System.out.println("X values sorted");
+     i=0;
+     while(i<arrx.size()){
+        
+         System.out.println(temp3.get(i));
+         i++;
+    }
+   //root
+        System.out.println("Root => "+temp3.get(0)+","+arry.get(0));
+  //   t.add(temp3.get(0),arry.get(0));
+     flag.add(1);
+     i=0;
+    // while(i<count){
+        calculate(temp3,arry,flag);
+   //  }
+     
+     
+     
+  /**   
+     while(count-1-i>0){
+         System.out.println("Enter median index");
+         median=sc.nextInt();
+         medi.add(median);
+         Collections.sort(medi);
+         //med=(int) floor(count-1-i/2);
+         System.out.println("Left child of "+temp3.get(i)+","+arry.get(i)+" is ");
+         for(j=0;j<(int)median;j++){
+             if(tmax<=temp3.get(j) && temp3.get(j)!=temp3.get(0)){
+                 tmax=temp3.get(j);
+             }
+         }
+         System.out.println("==> "+ tmax);
+         tmax=-999;
+         System.out.println("Right child of "+temp3.get(i)+","+arry.get(i)+" is ");
+         for(j=(int)median;j<count-1-i;j++){
+             if(tmax<=temp3.get(j)&& temp3.get(j)!=temp3.get(0)){
+                 tmax=temp3.get(j);
+             }
+         }
+         System.out.println("==> "+ tmax);
+         
+         i++;
+     }
+      */
+   
+     
+     /**
+    //temp=arrange();
+     int i=0;
+        while(true){
+            int val=sc.nextInt();
+            if(val==-999)
+                break;
+            t.add(val);
+            i++;
+        }
+        
+        System.out.println("Recursive approach  => ");
+        System.out.println("Number of leaf nodes -->" +t.leafNode(t.node));
+        System.out.println("Number of non-leaf nodes -->" +(i-t.leafNode(t.node)));
+        System.out.println("Height -->"+(t.height(t.node)));
+        System.out.println("Iterative approach => ");
+        System.out.println("Number of leaf nodes --> "+t.iterativeLeafNode(t.node));
+        System.out.println("Number of non-leaf nodes -->"+(i-t.iterativeLeafNode(t.node)));
+        System.out.println("Height -->"+t.iterativeHeight(t.node));
+   */
+  
+    }
+}
